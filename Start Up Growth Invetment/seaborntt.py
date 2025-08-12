@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #  Load Dataset
 df = pd.read_csv("startup_growth_investment_data.csv")
 
-#  Data Cleaning and Preprocessing
+
 # Drop rows with missing values in critical numeric columns
 df.dropna(subset=['Valuation (USD)', 'Investment Amount (USD)'], inplace=True)
 
@@ -23,9 +23,9 @@ sns.set(style="whitegrid")
 plt.rcParams['axes.titlesize'] = 14
 plt.rcParams['axes.labelsize'] = 12
 
-# --------------------------------------
+
 #  Count Plot: Number of Startups by Country
-# --------------------------------------
+
 plt.figure(figsize=(12, 6))
 sns.countplot(data=df, x='Country', order=df['Country'].value_counts().index)
 plt.title(" Number of Startups by Country")
@@ -35,9 +35,9 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-# --------------------------------------
+
 #  Bar Plot: Average Valuation (USD) by Country
-# --------------------------------------
+
 plt.figure(figsize=(12, 6))
 sns.barplot(data=df, x='Country', y='Valuation (USD)', estimator='mean', ci=None)
 plt.title(" Average Valuation by Country")
@@ -47,9 +47,9 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-# --------------------------------------
+
 #  Box Plot: Investment Amount by Country
-# --------------------------------------
+
 plt.figure(figsize=(12, 6))
 sns.boxplot(data=df, x='Country', y='Investment Amount (USD)')
 plt.title(" Investment Distribution by Country")
@@ -59,9 +59,9 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 
-# --------------------------------------
+
 #  Histogram: Distribution of Startup Valuations
-# --------------------------------------
+
 plt.figure(figsize=(10, 6))
 sns.histplot(data=df, x='Valuation (USD)', kde=True, bins=30)
 plt.title(" Distribution of Startup Valuations")
@@ -70,9 +70,9 @@ plt.ylabel("Frequency")
 plt.tight_layout()
 plt.show()
 
-# --------------------------------------
+
 #  Scatter Plot: Investment vs. Valuation (Colored by Country)
-# --------------------------------------
+
 plt.figure(figsize=(10, 6))
 sns.scatterplot(data=df, x='Investment Amount (USD)', y='Valuation (USD)', hue='Country')
 plt.title(" Investment vs Valuation (USD)")
@@ -81,9 +81,9 @@ plt.ylabel("Valuation (USD)")
 plt.tight_layout()
 plt.show()
 
-# --------------------------------------
+
 #  Heatmap: Correlation Between Numeric Columns
-# --------------------------------------
+
 plt.figure(figsize=(8, 6))
 corr = df.select_dtypes(include='number').corr()
 sns.heatmap(corr, annot=True, cmap='coolwarm', fmt=".2f")

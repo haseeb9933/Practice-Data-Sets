@@ -119,13 +119,7 @@ for elem in np.nditer(D2LongLat):
 for index, elem in np.ndenumerate(D2LongLat):
     print(index, elem)
 
-"""# for loop
-rows = np.shape(D2LongLat[0])[0]
-cols = np.shape(D2LongLat[1])[0]
-for i in range(0, (rows + 1)):
-    for j in range(0, (cols + 1)):
-        print (D2LongLat[i,j])
-"""
+
 
 D2LongLat1TO50 = np.reshape(D2LongLat, (1, 50))
 print("FastFoodRestaurants Long Plus Lat - 2 dimentional arrary - np.reshape(D2LongLat, (1, 298)) : " , D2LongLat1TO50)

@@ -1,7 +1,7 @@
 import numpy as np
 
 
-#Q1 loading data
+# loading data
 
 brokered_by, status, price, acre_lot, city, house_size = np.genfromtxt("C:\\Users\\Hp\\Documents\\GitHub\\full-stack-ai\\week3\\RealEstate-USA.csv", delimiter=',', usecols=(0, 1, 2, 3, 7,10), unpack=True, skip_header=1)
 
@@ -13,7 +13,7 @@ print(acre_lot)
 print(city)
 print(house_size)
 
-#Q2 operation on array of "price"
+# operation on array of "price"
 
 print("RealEstate-USA Price mean: " , np.mean(price))
 print("RealEstate-USA Price average: " , np.average(price))
@@ -22,7 +22,7 @@ print("RealEstate-USA Price mod: " , np.median(price))
 print("RealEstate-USA Price percentile -35: " , np.percentile(price,35))
 print("RealEstate-USA Price percentile  -65: " , np.percentile(price,65))
 
-#Q3 operation on array of “house_size”
+# operation on array of “house_size”
 
 print("RealEstate-USA Price mean: " , np.mean(house_size))
 print("RealEstate-USA Price average: " , np.average(house_size))
@@ -32,7 +32,7 @@ print("RealEstate-USA Price percentile -35: " , np.percentile(house_size,35))
 print("RealEstate-USA Price percentile  -65: " , np.percentile(house_size,65))
 
 
-#Q4 arithmetic operations ON house_size , price
+# arithmetic operations ON house_size , price
 
 addition = price + house_size
 subtraction = price - house_size
@@ -47,27 +47,27 @@ print(multiplication)
 np.nan_to_num(price)
 np.nan_to_num(house_size)
 
-#Q5 creating 2d array
+# creating 2d array
 
 stack2d = np.array([price, house_size]).T
 print(stack2d)
 
-#Q6 creating 3d array
+# creating 3d array
 
 stack3d = np.array([price, house_size, acre_lot]).T
 print(stack3d)
 
-#Q7 Iterate the array
+# Iterate the array
 
 for x in  np.nditer(price):
         print(x)
 
-#Q8 Iterate the array
+# Iterate the array
 
 for y in np.ndenumerate(price):
         print(y)      
 
-#Q9 common prpoerties
+# common prpoerties
 
 print(price.ndim)
 print(price.shape)
@@ -81,11 +81,11 @@ print(price.flags)
 
 print(stack2d[0:3 , 1:2])
 
-#Q11 slicing array
+# slicing array
 
 print(stack2d[2:8 ,3:5])
 
-#Q12 geometric operation in NUMPY
+# geometric operation in NUMPY
 
 stack2d = np.nan_to_num(stack2d) 
 print(np.sin(stack2d))

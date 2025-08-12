@@ -32,28 +32,7 @@ print("access the Name column: df : ")
 print(city)
 print()
 
-"""
-0            Real Biz International
-1                       Khan Estate
-2                   Shahum Estate 2
-3                               NaN
-4                               NaN
-                   ...
-144    Harum Real Estate & Builders
-145                     Almo Estate
-146              Gateway Properties
-147             Chughtai Associates
-148             Chughtai Associates
-"""
 
-# Case 1 : using .loc - default case - starts here
-# Reference: https://www.datacamp.com/tutorial/loc-vs-iloc
-# 
-"""
-Syntax               df.loc[row_indexer, column_indexer]              df.iloc[row_indexer, column_indexer]
-Indexing Method      Label-based                                      Position-based indexing
-Used for Reference   Row and column labels (names)                    Numerical indices of rows and columns (starting from 0)
-"""
 #Selecting a single row using .loc
 second_row = df.loc[1]
 print("#Selecting a single row using .loc")
@@ -93,9 +72,7 @@ print()
 
 
 print("# Case 2 : using .loc with index_col - starts here")
-# Case 2 : using .loc with index_col - starts here
-# Second cycle - with index_col as property_id
-# Why Second cycle - Note Index - , index_col='property_id'
+
 df_index_col = pd.read_csv('FastFoodRestaurants.csv',delimiter=",",parse_dates=[9], date_format={'date_added': '%d-%m-%Y'} , index_col='address')
 
 print(df_index_col)
